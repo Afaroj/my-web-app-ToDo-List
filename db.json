@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 7682,
+      "text": "ttt"
+    }
+  ],
+  "Todo": [
+    {
+      "text": " sjsjjs",
+      "id": 5
+    },
+    {
+      "text": "hdhhhfhhfff",
+      "id": 7
+    },
+    {
+      "text": " sjsjjs",
+      "id": 8
+    },
+    {
+      "text": "adawdawDWad",
+      "id": 9
+    },
+    {
+      "text": "asdasdasdas",
+      "id": 10
+    },
+    {
+      "text": "asdasdasd",
+      "id": 11
+    },
+    {
+      "text": "aSAs",
+      "id": 12
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

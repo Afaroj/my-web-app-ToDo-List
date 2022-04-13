@@ -1,25 +1,16 @@
-import React, { useState } from "react";
-//import TodoForm from './TodoForm';
-//import TodoList from './TodoList';
+import React, { useState,useEffect } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
-// import TodoForm from './TodoForm';
 
-function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
+
+function Todo({ todos, completeTodo, removeTodo, updateTodo,setItem }) {
   const [input, setInput] = useState("");
-
   const [edit, setEdit] = useState({
     id: null,
     value: "",
-  });
-  // const displayTodo = todo =>
-  // {
-
-  //     const newTodos = [todo, ...todos];
-
-  //     displayTodo(newTodos);
-  //     //console.log(...todos);
-  // };
+  }
+  
+  );
   //to update the value
   const submitUpdate = () => {
     updateTodo(edit.id, { id: edit.id, text: input });
@@ -28,53 +19,16 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       id: null,
       value: "",
     });
-    //console.log(...todos);
+    //console.log(submitUpdate);
   };
-  // const displayTodoList =(todo )=>{
-  //     const newTodos = [todo];
-  //     displayTodo(newTodos);
 
-  // }
-  // if(edit.id)
-  // {
-  //     return(<TodoForm
-  //         edit={edit}
-  //         onSubmit={submitUpdate}
-  //         displayTodoList={displayTodoList}
-  //     />
-  //     );
-
-  // }
-  // if(edit.id)
-  //   {
-  //       return( <TodoForm edit={edit}
-  //         onSubmit={submitUpdate}
-  //         displayTodo={displayTodo}
-
-  //      /> );
-  //   }
-  /*if(edit.id)
-      {
-          return <TodoForm edit={edit}
-            onSubmit={submitUpdate}
-         />;
-      }*/
-  //to update the value2
-  /*const submitUpdate = value =>
+  //handleDelete box
+  const handleDelete=(todo)=> {
+    if(window.confirm(`You want to delete ${todo.text}`))
     {
-        updateTodo(edit.id,value);
-        setEdit({
-            id: null,
-            value: ''
-        });
-    };
-    
-     if(edit.id)
-     {
-         return <TodoForm edit={edit}
-            onSubmit={submitUpdate}
-         />;
-     }*/
+      removeTodo(todo.id);
+    }
+  }
 
   return todos.map((todo, index) => (
     <div
@@ -88,7 +42,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
           </div>
           <div className="icons">
             <RiCloseCircleLine
-              onClick={() => removeTodo(todo.id)}
+              onClick={() => {handleDelete(todo)}  }
               className="delete-icon"
             />
             <TiEdit
